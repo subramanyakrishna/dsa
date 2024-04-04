@@ -6,9 +6,8 @@ public:
             l--;
             r++;
         }
-        l++;
-        r--;
-        if(r-l+1 > ans.size()) ans = s.substr(l,r-l+1);
+
+        if(r-l-1> ans.size()) ans = s.substr(l+1,r-l-1);
     }
     string longestPalindrome(string s) {
         int i = 0 , max = 0, n = s.size();
