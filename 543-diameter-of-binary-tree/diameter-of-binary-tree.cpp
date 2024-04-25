@@ -14,8 +14,8 @@ public:
     int helper(TreeNode* root, int &max){
         if(root==NULL) return 0;
         if(root->left == NULL && root->right == NULL) return 1;
-        int left = root->left ? helper(root->left,max) : 0;
-        int right = root->right ? helper(root->right,max) : 0;
+        int left = helper(root->left,max) ;
+        int right = helper(root->right,max) ;
         max = max > left+right ? max : left+right;
         return left > right ? left+1 : right+1;
     }
